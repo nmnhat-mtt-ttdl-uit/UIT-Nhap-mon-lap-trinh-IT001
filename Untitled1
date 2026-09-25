@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <cmath>
+
+int main() {
+    std::cout << "========================================" << std::endl;
+    std::cout << "   KIEM TRA MOI TRUONG C++ TREN LINUX   " << std::endl;
+    std::cout << "========================================" << std::endl;
+
+    // 1. Kiem tra phien ban C++ dang su dung
+    std::cout << "[1] Phien ban C++ chuan: ";
+    if (__cplusplus == 202302L) std::cout << "C++23" << std::endl;
+    else if (__cplusplus == 202002L) std::cout << "C++20" << std::endl;
+    else if (__cplusplus == 201703L) std::cout << "C++17" << std::endl;
+    else if (__cplusplus == 201402L) std::cout << "C++14" << std::endl;
+    else if (__cplusplus == 201103L) std::cout << "C++11" << std::endl;
+    else std::cout << "C++98 hoac phien ban cu hon (" << __cplusplus << ")" << std::endl;
+
+    // 2. Kiem tra Tinh nang Vector (Lamba va Thu vien Vector)
+    std::cout << "[2] Kiem tra Vector & Lambda: ";
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    int sum = std::accumulate(numbers.begin(), numbers.end(), 0, [](int a, int b) {
+        return a + b;
+    });
+
+    if (sum == 15) {
+        std::cout << "Thanh cong (Tong tu 1 den 5 = " << sum << ")" << std::endl;
+    } else {
+        std::cout << "That bai" << std::endl;
+    }
+
+    // 3. Kiem tra Ham toan hoc
+    std::cout << "[3] Kiem tra ham toan hoc (sqrt): ";
+    double root = std::sqrt(16.0);
+    if (root == 4.0) {
+        std::cout << "Thanh cong (Can bac hai cua 16 = " << root << ")" << std::endl;
+    } else {
+        std::cout << "That bai" << std::endl;
+    }
+
+    std::cout << "========================================" << std::endl;
+    std::cout << "KET LUAN: Trinh bien dich hoat dong TOT!" << std::endl;
+    std::cout << "========================================" << std::endl;
+
+    return 0;
+}
